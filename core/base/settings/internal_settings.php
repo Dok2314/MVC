@@ -2,8 +2,8 @@
 
 defined('VG_ACCESS') or die('Access Denied!');
 
-const TEMPLATE        = 'templates/default/';
-const ADMIN_TEMPLATES = 'core/admin/views/';
+const TEMPLATE       = 'templates/default/';
+const ADMIN_TEMPLATE = 'core/admin/views/';
 
 const COOKIE_VERSION = '1.0.0';
 const CRYPT_KEY      = '';
@@ -22,3 +22,15 @@ const USER_CSS_JS = [
     'styles' => [],
     'scripts' => []
 ];
+
+use core\base\exceptions\RouteException;
+
+function autoloadMainClasses($className)
+{
+    $className = str_replace('\\', '/', $className);
+    if(!@include_once $className . '.php') {
+        throw new RouteException('Не верное имя файла для подключения - ' . $className);
+    }
+}
+
+spl_autoload_register('autoloadMainClasses');
