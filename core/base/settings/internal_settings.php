@@ -1,9 +1,9 @@
 <?php
 
-defined('VG_ACCESS') or die('Access Denied');
+defined('VG_ACCESS') or die('Access Denied!');
 
 const TEMPLATE        = 'templates/default/';
-const ADMIN_TEMPLATE  = 'core/admin/views/';
+const ADMIN_TEMPLATES = 'core/admin/views/';
 
 const COOKIE_VERSION = '1.0.0';
 const CRYPT_KEY      = '';
@@ -14,8 +14,8 @@ const QTY       = 8;
 const QTY_LINKS = 3;
 
 const ADMIN_CSS_JS = [
-    'styles' => [],
-    'scripts' => []
+  'styles' => [],
+  'scripts' => []
 ];
 
 const USER_CSS_JS = [
